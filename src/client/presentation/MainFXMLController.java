@@ -14,6 +14,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.SubScene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
@@ -32,7 +34,9 @@ public class MainFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //Side-menu
-        menu.prefHeightProperty().bind(module.heightProperty());
+        menu.prefHeightProperty().bind(((AnchorPane)menu.getParent()).heightProperty());
+        module.heightProperty().bind(menu.heightProperty());
+        module.widthProperty().bind(((Pane)module.getParent()).widthProperty());
         TranslateTransition menuTranslation = new TranslateTransition(Duration.millis(500), menu);
         menuTranslation.setFromX(-140);
         menuTranslation.setToX(0);

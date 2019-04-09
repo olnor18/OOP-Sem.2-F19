@@ -191,6 +191,8 @@ public class LoginFXMLController implements Initializable {
             Scene scene = new Scene(decorator);
             scene.getStylesheets().add(getClass().getResource("css/generalStyleSheet.css").toExternalForm());
             stage.setScene(scene);
+            stage.setMinHeight(870);
+            stage.setMinWidth(1200);
             stage.show();
             stage.setTitle("Sanitas Overview");
 
