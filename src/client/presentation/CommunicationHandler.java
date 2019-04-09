@@ -8,6 +8,8 @@ package client.presentation;
 import client.communication.CommunicationInterface;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,6 +36,11 @@ public class CommunicationHandler {
     public List<String[]> sendQuery(String[] query)
     {
         //return communicationInterface.sendQuery(query);
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(CommunicationHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
         List<String[]> sampleData = new ArrayList<>();
         sampleData.add(new String[]{"dummy","dummy2"});
         return sampleData;

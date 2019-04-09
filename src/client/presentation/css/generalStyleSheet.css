@@ -51,7 +51,7 @@ and open the template in the editor.
 
 .jfx-spinner .arc 
 {
-    -fx-stroke: -fx-secondary
+    -fx-stroke: -fx-green;
 }
 
 .wrong-credentials
