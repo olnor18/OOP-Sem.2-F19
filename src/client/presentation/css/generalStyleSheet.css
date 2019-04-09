@@ -36,16 +36,7 @@ and open the template in the editor.
     -fx-text-fill: -fx-green;
 }
 
-.jfx-text-field, .jfx-password-field {
-    -fx-prompt-text-fill: derive(-fx-green, -40%);
-    -jfx-focus-color: -fx-green;
-    -jfx-unfocus-color: derive(-fx-green, -40%);
-}
 
-.jfx-text-field:focused, .jfx-password-field:focused {
-    -fx-prompt-text-fill: -fx-green;
-    -jfx-unfocus-color: derive(-fx-green, -40%);
-}
 
 /*Login Screen Specific*/
 
@@ -59,4 +50,16 @@ and open the template in the editor.
     -jfx-unfocus-color: #ef5350;
     -jfx-focus-color: #ef5350;
     -fx-text-fill:#ef5350
+}
+
+.jfx-text-field, .jfx-password-field {
+    -fx-text-fill: derive(-fx-green, 20%);
+    -fx-prompt-text-fill: derive(-fx-green, -40%);
+    -jfx-focus-color: -fx-green;
+    -jfx-unfocus-color: derive(-fx-green, -40%);
+}
+
+.jfx-text-field:focused, .jfx-password-field:focused {
+    -fx-prompt-text-fill: -fx-green;
+    -jfx-unfocus-color: derive(-fx-green, -40%);
 }
