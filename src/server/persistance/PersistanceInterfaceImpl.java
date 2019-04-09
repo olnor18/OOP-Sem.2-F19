@@ -5,10 +5,20 @@
  */
 package server.persistance;
 
+import java.io.File;
+import java.util.List;
+
 /**
  *
  * @author prikn
  */
-public class PersistanceInterfaceImpl {
+public class PersistanceInterfaceImpl implements PersistanceInterface {
+    
+    private File file;
+
+    @Override
+    public List<String[]> parseQuery(String[] query) {
+        
+    }
     
 }

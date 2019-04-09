@@ -5,10 +5,20 @@
  */
 package server.domain;
 
+import java.util.List;
+import server.persistance.PersistanceInterface;
+
 /**
  *
  * @author Oliver
  */
-public class DomainInterfaceImpl {
+public class DomainInterfaceImpl implements DomainInterface {
+    
+    private PersistanceInterface persistanceInterface;
+
+    @Override
+    public List<String[]> parseQuery(String[] query) {
+        
+    }
     
 }

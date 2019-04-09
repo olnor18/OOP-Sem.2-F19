@@ -5,10 +5,14 @@
  */
 package server.persistance;
 
+import java.util.List;
+
 /**
  *
  * @author Oliver
  */
 public interface PersistanceInterface {
+    
+    public List<String[]> parseQuery(String[] query);
     
 }

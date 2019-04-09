@@ -5,10 +5,14 @@
  */
 package server.domain;
 
+import java.util.List;
+
 /**
  *
  * @author prikn
  */
 public interface DomainInterface {
+    
+    public List<String[]> parseQuery(String[] query);
     
 }
