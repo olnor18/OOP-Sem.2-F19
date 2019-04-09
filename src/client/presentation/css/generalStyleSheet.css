@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09-Apr-2019, 10:14:12
+    Author     : Oliver
+*/
+
+* {
+    -fx-primary : #2E4057;
+    -fx-secondary : #048BA8;
+    -fx-dark : #2F2D2E;
+    -fx-orange : #F18F01;
+    -fx-green: #99C24D;
+}
+
+.glyph-icon
+{
+    -fx-fill: -fx-primary;
+}
+
+.button{
+    -fx-text-fill: derive(-fx-green, -40%);
+    -fx-background-color: -fx-green;
+    -fx-border-color: derive(-fx-green, -40%);
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+
+.button:hover, .button:focused{
+    -fx-border-color: -fx-green;
+    -fx-background-color:derive(-fx-green, -40%);
+    -fx-text-fill: -fx-green;
+}
+
+.jfx-text-field, .jfx-password-field {
+    -fx-prompt-text-fill: derive(-fx-green, -40%);
+    -jfx-focus-color: -fx-green;
+    -jfx-unfocus-color: derive(-fx-green, -40%);
+}
+
+.jfx-text-field:focused, .jfx-password-field:focused {
+    -fx-prompt-text-fill: -fx-green;
+    -jfx-unfocus-color: derive(-fx-green, -40%);
+}
+
+/*Login Screen Specific*/
+
+.jfx-spinner .arc 
+{
+    -fx-stroke: -fx-secondary
+}
+
+.wrong-credentials
+{
+    -jfx-unfocus-color: #ef5350;
+    -jfx-focus-color: #ef5350;
+    -fx-text-fill:#ef5350
+}
