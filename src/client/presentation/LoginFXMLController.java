@@ -5,6 +5,7 @@
  */
 package client.presentation;
 
+import client.presentation.utils.CustomDecorator;
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -185,7 +186,7 @@ public class LoginFXMLController implements Initializable {
         try {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
-            JFXDecorator decorator = new JFXDecorator(stage, root, false, true, true);
+            CustomDecorator decorator = new CustomDecorator(stage, root, false, true, true);
             decorator.setCustomMaximize(true);
             decorator.setGraphic(new SVGGlyph());
             Scene scene = new Scene(decorator);

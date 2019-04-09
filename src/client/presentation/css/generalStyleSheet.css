@@ -52,10 +52,24 @@ and open the template in the editor.
     -fx-text-fill:#ef5350
 }
 
+.jfx-text-field, .jfx-password-field {
+    -fx-text-fill : derive(-fx-green, 20%);
+    -fx-prompt-text-fill: derive(-fx-green, -40%);
+    -jfx-focus-color: -fx-green;
+    -jfx-unfocus-color: derive(-fx-green, -40%);
+}
+
+.jfx-text-field:focused, .jfx-password-field:focused {
+    -fx-prompt-text-fill: -fx-green;
+    -jfx-unfocus-color: derive(-fx-green, -40%);
+}
+
 /*Decorator*/
 .jfx-decorator .jfx-decorator-buttons-container {
     -fx-background-color: -fx-primary;
-    
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
 }
 
 .jfx-decorator .resize-border {
@@ -94,4 +108,98 @@ and open the template in the editor.
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
     -fx-font-size: 12pt;
+}
+
+/* Dashboad */
+.list-view {
+    -fx-background-color: -fx-secondary;
+    -fx-padding : 0px;
+    -fx-background-insets: 0;
+}
+
+.list-view:selected{
+    -fx-background-color: -fx-secondary;
+    -fx-padding : 0px;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: derive(-fx-dark, -10%);
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: -fx-dark;
+}
+
+.list-view .list-cell {
+    -fx-background-color: derive(-fx-dark, -40%);
+    -fx-text-fill: -fx-green;
+}
+
+.list-view .label {
+    -fx-text-fill: -fx-green;
+}
+
+.list-view .jfx-rippler {
+    -jfx-rippler-fill: -fx-secondary;
+}
+
+.mylistview{
+    -fx-border-color:-fx-dark;
+}
+
+/* The main scrollbar CSS class of ListView */
+.mylistview .scroll-bar:horizontal ,
+.mylistview  .scroll-bar:vertical{
+    -fx-background-color:-fx-dark;
+
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.mylistview .increment-button ,.mylistview .decrement-button {
+    -fx-background-color:transparent;
+}
+
+/* The main scrollbar **track** CSS class  */
+.mylistview .scroll-bar:horizontal .track ,
+.mylistview .scroll-bar:vertical .track{
+    -fx-background-color: -fx-dark;
+    -fx-border-color:-fx-dark;
+    -fx-background-radius: 0em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.mylistview .scroll-bar:horizontal .thumb,
+.mylistview .scroll-bar:vertical .thumb {
+    -fx-background-color:-fx-secondary;
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0em;
+
+}
+
+/* ------------------------------------------------------------------------------------- */
+/** EVENT CSS **/
+/* ------------------------------------------------------------------------------------- */
+
+/* The main scrollbar **track** CSS class on event of "hover" and "pressed" */
+
+.mylistview .scroll-bar:horizontal:hover .track ,
+.mylistview .scroll-bar:horizontal:pressed .track ,
+.mylistview .scroll-bar:vertical:hover .track,
+.mylistview .scroll-bar:vertical:pressed .track{
+    -fx-background-color: -fx-dark;
+
+    -fx-opacity: 0.2;
+    -fx-background-radius: 0em;
+
+}
+
+/* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" */
+.mylistview .scroll-bar .thumb:hover,
+.mylistview .scroll-bar .thumb:pressed{
+    -fx-background-color: derive(-fx-secondary, 20%);
+}
+
+.mylistview .increment-button:hover ,.mylistview .decrement-button:hover {
+    /*-fx-background-color: derive(-fx-secondary, 20%);*/
+    /*-fx-border-color: derive(-fx-secondary, 20%);*/
 }

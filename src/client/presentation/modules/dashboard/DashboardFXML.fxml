@@ -50,7 +50,7 @@
                   <Font size="27.0" />
                </font>
             </Label>
-            <JFXListView fx:id="activityView" style="-fx-background-color: #048BA8;" VBox.vgrow="ALWAYS" />
+            <JFXListView fx:id="activityView" fixedCellSize="0.0" styleClass="mylistview" stylesheets="@../../css/generalStyleSheet.css" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </right>

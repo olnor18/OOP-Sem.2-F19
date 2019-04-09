@@ -5,10 +5,8 @@
  */
 package client.presentation.utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.google.common.primitives.Chars;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  *
@@ -16,10 +14,25 @@ import java.util.stream.Collectors;
  */
 public class StringUtils
 {
-   //Jeg er i gang her - Oliver
-    /* public static getBoldString(String s)
+    public static String getBoldString(String s)
     {
-        List<Character> list = s.chars().mapToObj(c -> ((char) c + 120205)).collect(Collectors.toList());
-        return (char)120205 + s;
-    }*/ 
+        List<Character> input = Chars.asList(s.toCharArray());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < input.size(); i++)
+        {
+            if (Character.isLowerCase(input.get(i)))
+            {
+                sb.append(Character.toChars(120205+input.get(i)));
+            }
+            else if (Character.isUpperCase(input.get(i)))
+            {
+                sb.append(Character.toChars(119743+input.get(i)));
+            }
+            else
+            {
+                sb.append(input.get(i));
+            }
+        }
+        return sb.toString();
+    }
 }

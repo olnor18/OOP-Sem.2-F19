@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RED;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="client.presentation.modules.dashboard.ActivityEntryPopupFXMLController">
+   <children>
+      <FontAwesomeIconView fx:id="cross" glyphName="TIMES" layoutX="554.0" layoutY="48.0" onMouseClicked="#close" size="40" />
+   </children>
+</AnchorPane>
