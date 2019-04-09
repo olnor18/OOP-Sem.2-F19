@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.presentation.modules.dashboard.DashboardFXMLController">
+   <children>
+      <BorderPane maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="1080.0">
+         <top>
+            <HBox BorderPane.alignment="TOP_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
+                     <font>
+                        <Font size="63.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font size="63.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </top>
+      </BorderPane>
+      <VBox prefWidth="200.0" style="-fx-background-color: #2F2E2D;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="200.0" text="Activity" textAlignment="CENTER" textFill="#99c24d" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <JFXListView fx:id="activityView" style="-fx-background-color: #048BA8;" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

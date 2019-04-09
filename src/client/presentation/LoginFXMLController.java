@@ -16,7 +16,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +32,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Hounsvad
+ * @author Oliver
  */
 public class LoginFXMLController implements Initializable {
 
@@ -133,7 +132,7 @@ public class LoginFXMLController implements Initializable {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                List<String[]> sqlReturn = communicationHandler.sendQuery(new String[]{"login",username.getText(),password.getText()});
+                List<String[]> sqlReturn = communicationHandler.sendQuery(new String[]{"login", username.getText(), password.getText()});
                 if (sqlReturn != null && !sqlReturn.isEmpty()) {
                     uName = username.getText();
                     pWord = password.getText();
@@ -185,13 +184,12 @@ public class LoginFXMLController implements Initializable {
     void loadMain() {
         try {
             Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
             JFXDecorator decorator = new JFXDecorator(stage, root, false, true, true);
             decorator.setCustomMaximize(true);
             decorator.setGraphic(new SVGGlyph());
             Scene scene = new Scene(decorator);
-            scene.getStylesheets().add(getClass().getResource("css/decorator.css").toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("css/dark-theme.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/generalStyleSheet.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
             stage.setTitle("Sanitas Overview");
