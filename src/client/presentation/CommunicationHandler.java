@@ -17,6 +17,7 @@ import java.util.logging.Logger;
  */
 public class CommunicationHandler {
     private static CommunicationHandler communicationHandler;
+    private String name;
     private CommunicationInterface communicationInterface;
     
     private CommunicationHandler()
@@ -46,4 +47,8 @@ public class CommunicationHandler {
         return sampleData;
     }
     
+    public String getName()
+    {
+        return name;
+    }
 }
