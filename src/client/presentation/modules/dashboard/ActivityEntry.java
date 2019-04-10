@@ -6,13 +6,12 @@
 package client.presentation.modules.dashboard;
 
 import static client.presentation.utils.StringUtils.getBoldString;
+import java.io.IOException;
 import java.util.Date;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -50,7 +49,7 @@ public class ActivityEntry {
 
     public void showPopup() {
         Platform.runLater(()
-                -> {
+        -> {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ActivityEntryPopupFXML.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
@@ -59,11 +58,9 @@ public class ActivityEntry {
                 Stage stage = new Stage();
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.initStyle(StageStyle.UNDECORATED);
-                stage.setTitle(typeOfEntry);
                 stage.setScene(new Scene(root));
                 stage.show();
-            } catch (Exception e) {
-            }
+            } catch (IOException e) {}
         });
     }
 }
