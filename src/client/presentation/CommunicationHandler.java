@@ -43,7 +43,8 @@ public class CommunicationHandler {
             Logger.getLogger(CommunicationHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
         List<String[]> sampleData = new ArrayList<>();
-        sampleData.add(new String[]{"dummy","dummy2"});
+        sampleData.add(new String[]{"Dummy McDummy","dummy2"});
+        name = sampleData.get(0)[0];
         return sampleData;
     }
     

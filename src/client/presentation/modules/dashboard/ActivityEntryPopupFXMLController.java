@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -18,25 +19,39 @@ import javafx.stage.Stage;
  *
  * @author Oliver
  */
-public class ActivityEntryPopupFXMLController implements Initializable
-{
+public class ActivityEntryPopupFXMLController implements Initializable {
 
     @FXML
     private FontAwesomeIconView cross;
+    @FXML
+    private Label title;
+    @FXML
+    private Label description;
+    @FXML
+    private Label query;
+    @FXML
+    private Label date;
+    @FXML
+    private Label ip;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-        
-    }    
+    public void initialize(URL url, ResourceBundle rb) {
+    }
 
     @FXML
-    private void close(MouseEvent event)
-    {
+    private void close(MouseEvent event) {
         ((Stage) cross.getScene().getWindow()).close();
     }
-    
+
+    public void setData(String titleString, String descriptionString, String queryString, String dateString, String ipString) {
+        title.setText(titleString);
+        description.setText(descriptionString);
+        query.setText(queryString);
+        date.setText(dateString);
+        ip.setText(ipString);
+    }
+
 }

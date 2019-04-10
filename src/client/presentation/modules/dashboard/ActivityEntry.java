@@ -5,6 +5,7 @@
  */
 package client.presentation.modules.dashboard;
 
+import static client.presentation.utils.StringUtils.getBoldString;
 import java.util.Date;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -20,53 +21,48 @@ import javafx.stage.StageStyle;
  *
  * @author Oliver
  */
-public class ActivityEntry
-{
+public class ActivityEntry {
 
     private final String typeOfEntry;
     private final String dateOfEntryString;
     private final String specificsOfEntry;
 
-    public ActivityEntry(String typeOfEntry, Date dateOfEntry, String specificsOfEntry)
-    {
+    public ActivityEntry(String typeOfEntry, Date dateOfEntry, String specificsOfEntry) {
         this.typeOfEntry = typeOfEntry;
         this.dateOfEntryString = String.format("%1$" + 2 + "s", dateOfEntry.getHours()).replace(' ', '0') + ":"
                 + String.format("%1$" + 2 + "s", dateOfEntry.getMinutes()).replace(' ', '0') + ":"
                 + String.format("%1$" + 2 + "s", dateOfEntry.getSeconds()).replace(' ', '0') + " "
                 + String.format("%1$" + 2 + "s", dateOfEntry.getDate()).replace(' ', '0') + "/"
                 + String.format("%1$" + 2 + "s", dateOfEntry.getMonth()).replace(' ', '0') + "/"
-                + (dateOfEntry.getYear()+1900);
+                + (dateOfEntry.getYear() + 1900);
         this.specificsOfEntry = specificsOfEntry;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder(specificsOfEntry);
         int i = 0;
-        while (i + 23 < sb.length() && (i = sb.lastIndexOf(" ", i + 23)) != -1)
-        {
+        while (i + 23 < sb.length() && (i = sb.lastIndexOf(" ", i + 23)) != -1) {
             sb.replace(i, i + 1, "\n");
         }
-        return typeOfEntry + "\n" + sb.toString() + "\n" + dateOfEntryString;
+        return getBoldString(typeOfEntry) + "\n" + sb.toString() + "\n" + dateOfEntryString;
     }
 
-    public void showPopup()
-    {
-        Platform.runLater(() ->
-        {
-            try
-            {
+    public void showPopup() {
+        Platform.runLater(()
+                -> {
+            try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ActivityEntryPopupFXML.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
+                Parent root = (Parent) fxmlLoader.load();
+                ActivityEntryPopupFXMLController controller = fxmlLoader.<ActivityEntryPopupFXMLController>getController();
+                controller.setData(typeOfEntry, specificsOfEntry, "Query: ladidada", dateOfEntryString, "IP: 10.201.271.28");
                 Stage stage = new Stage();
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.initStyle(StageStyle.UNDECORATED);
                 stage.setTitle(typeOfEntry);
-                stage.setScene(new Scene(root1));
+                stage.setScene(new Scene(root));
                 stage.show();
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
             }
         });
     }

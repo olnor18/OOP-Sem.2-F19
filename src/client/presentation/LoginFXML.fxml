@@ -29,7 +29,6 @@
       <JFXButton layoutX="288.0" layoutY="321.0" onAction="#handleCancelButtonAction" prefHeight="39.0" prefWidth="99.0" stylesheets="@css/generalStyleSheet.css" text="Cancel" textFill="#99c24d" />
       <FontAwesomeIconView fill="#99c24d" glyphName="USER" layoutX="83.0" layoutY="197.0" size="30" stroke="#048ba8" strokeWidth="0.0" wrappingWidth="30.00000250339508" />
       <FontAwesomeIconView fill="#99c24d" glyphName="KEY" layoutX="83.0" layoutY="268.0" size="30" stroke="#048ba8" strokeWidth="0.0" />
-      <FontAwesomeIconView fill="#99c24d" glyphName="TIMES" layoutX="395.0" layoutY="56.0" onMouseClicked="#handleCancelButtonAction" size="40" stroke="#048ba8" strokeWidth="0.0" wrappingWidth="30.00000250339508" />
       <Label fx:id="message" alignment="CENTER" layoutX="83.0" layoutY="113.0" prefHeight="21.0" prefWidth="304.0" textAlignment="CENTER" textFill="RED" />
       <Pane fx:id="loadpane" prefHeight="400.0" prefWidth="470.0" visible="false">
          <children>
@@ -40,5 +39,6 @@
             <JFXSpinner layoutX="210.0" layoutY="175.0" stylesheets="@css/generalStyleSheet.css" />
          </children>
       </Pane>
+      <FontAwesomeIconView fill="#99c24d" glyphName="TIMES" layoutX="395.0" layoutY="56.0" onMouseClicked="#handleCancelButtonAction" size="40" stroke="#048ba8" strokeWidth="0.0" wrappingWidth="30.00000250339508" />
    </children>
 </AnchorPane>
