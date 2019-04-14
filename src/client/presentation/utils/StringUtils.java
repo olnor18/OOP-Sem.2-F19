@@ -14,6 +14,9 @@ import java.util.List;
  */
 public class StringUtils
 {
+    private static final int BOLD_ASCII_OFFSET_LOWERCASE = 120205;
+    private static final int BOLD_ASCII_OFFSET_UPPERCASE = 119743;
+    
     public static String getBoldString(String s)
     {
         List<Character> input = Chars.asList(s.toCharArray());
@@ -22,11 +25,11 @@ public class StringUtils
         {
             if (Character.isLowerCase(input.get(i)))
             {
-                sb.append(Character.toChars(120205+input.get(i)));
+                sb.append(Character.toChars(BOLD_ASCII_OFFSET_LOWERCASE + input.get(i)));
             }
             else if (Character.isUpperCase(input.get(i)))
             {
-                sb.append(Character.toChars(119743+input.get(i)));
+                sb.append(Character.toChars(BOLD_ASCII_OFFSET_UPPERCASE + input.get(i)));
             }
             else
             {

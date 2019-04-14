@@ -21,7 +21,7 @@
                   <Insets left="10.0" top="10.0" />
                </BorderPane.margin>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
+                  <Text fill="#2e4057" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
                      <font>
                         <Font size="49.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </GridPane.margin>
                      <children>
-                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" style="-fx-background-color: #99C24D;" text="Messages" textAlignment="CENTER" textFill="WHITE">
+                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" style="-fx-background-color: #048BA8;" text="Messages" textAlignment="CENTER" textFill="WHITE">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -78,9 +78,9 @@
       </BorderPane>
    </center>
    <right>
-      <VBox maxWidth="-Infinity" prefWidth="200.0" style="-fx-background-color: #2F2E2D;" BorderPane.alignment="CENTER">
+      <VBox maxWidth="-Infinity" prefWidth="200.0" style="-fx-background-color: #048BA8;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="200.0" text="Activity" textAlignment="CENTER" textFill="#99c24d" VBox.vgrow="ALWAYS">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="200.0" text="Activity" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="27.0" />
                </font>

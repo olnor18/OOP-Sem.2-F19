@@ -11,9 +11,6 @@ and open the template in the editor.
 * {
     -fx-primary : #2E4057;
     -fx-secondary : #048BA8;
-    -fx-dark : #2F2D2E;
-    -fx-orange : #F18F01;
-    -fx-green: #99C24D;
 }
 
 .glyph-icon
@@ -22,18 +19,18 @@ and open the template in the editor.
 }
 
 .button{
-    -fx-text-fill: derive(-fx-green, -40%);
-    -fx-background-color: -fx-green;
-    -fx-border-color: derive(-fx-green, -40%);
+    -fx-text-fill: -fx-primary;
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-primary;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-font-size: 12pt;
 }
 
 .button:hover, .button:focused{
-    -fx-border-color: -fx-green;
-    -fx-background-color:derive(-fx-green, -40%);
-    -fx-text-fill: -fx-green;
+    -fx-border-color: -fx-secondary;
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-secondary;
 }
 
 
@@ -42,7 +39,7 @@ and open the template in the editor.
 
 .jfx-spinner .arc 
 {
-    -fx-stroke: -fx-green;
+    -fx-stroke: -fx-secondary;
 }
 
 .wrong-credentials
@@ -53,15 +50,15 @@ and open the template in the editor.
 }
 
 .jfx-text-field, .jfx-password-field {
-    -fx-text-fill : derive(-fx-green, 20%);
-    -fx-prompt-text-fill: derive(-fx-green, -40%);
-    -jfx-focus-color: -fx-green;
-    -jfx-unfocus-color: derive(-fx-green, -40%);
+    -fx-text-fill : derive(-fx-secondary, 40%);
+    -fx-prompt-text-fill: derive(-fx-secondary, -10%);
+    -jfx-focus-color: -fx-secondary;
+    -jfx-unfocus-color: derive(-fx-secondary, -10%);
 }
 
 .jfx-text-field:focused, .jfx-password-field:focused {
-    -fx-prompt-text-fill: -fx-green;
-    -jfx-unfocus-color: derive(-fx-green, -40%);
+    -fx-prompt-text-fill: -fx-secondary;
+    -jfx-unfocus-color: derive(-fx-secondary, -20%);
 }
 
 /*Decorator*/
@@ -78,14 +75,14 @@ and open the template in the editor.
 }
 
 .jfx-decorator .jfx-decorator-title-container .jfx-decorator-text {
-    -fx-fill: -fx-green;
+    -fx-fill: -fx-secondary;
     -fx-font-size: 25;
 }
 
 .jfx-decorator .jfx-decorator-title-container .jfx-svg-glyph {
     -fx-shape: "M633,1C493.1,10.1,353.8,60.4,214.1,152.5c-69.4,45.7-141.5,105-195.7,160.9L.1,332.3l10,10.8c14,15.1,58.3,56.9,83.9,79.4C238.6,549.2,390.5,627.8,538.5,652.4c42.3,7,66,9,110.5,9,38.3.1,51.7-.7,84.5-4.9,100.6-12.9,198.5-48.2,296-106.8,87.6-52.6,176.7-128.7,242.9-207.5l7.8-9.3-1.9-2.2c-1.1-1.2-7.5-8.7-14.4-16.7C1152.8,184.1,1026.6,90.1,899.5,42.2,841.9,20.6,788.4,8.2,727,2.4,707.5.6,652.3-.2,633,1Zm42.1,58a291.28,291.28,0,0,1,153.4,62.7,273.23,273.23,0,0,1,73.4,91.6c9.1,18.4,13.7,30.4,18.7,48.6A266.13,266.13,0,0,1,916.9,414a261,261,0,0,1-32.4,66.5c-10.9,16.3-19.3,26.4-34.9,42-23.2,23.2-45,38.7-75.1,53.5-28,13.8-55,22.2-87.5,27.1-19.6,3-58,3.3-77.5.5-68-9.4-124.6-37.8-170.5-85.2-42.2-43.7-67.1-96.3-74.6-157.4-2-16.6-1.5-51.7,1.1-68,15.9-102.9,87.9-186.9,189-220.5,21.8-7.2,40.3-11.1,65.5-13.8C628,57.8,665.5,58.1,675.1,59ZM596.36,532V383.21h-150V280.48h150V131.65h100V280.48H846.75V383.21H696.36V532Z";
     -jfx-size: 25;
-    -fx-background-color: -fx-green;
+    -fx-background-color: -fx-secondary;
 }
 
 .jfx-decorator .button{
@@ -111,59 +108,59 @@ and open the template in the editor.
 }
 
 /* Dashboad */
-.mylistview .list-view {
+.list-view {
     -fx-background-color: -fx-secondary;
     -fx-padding : 0px;
     -fx-background-insets: 0;
 }
 
-.mylistview .list-view:selected{
+.list-view:selected{
     -fx-background-color: -fx-secondary;
     -fx-padding : 0px;
 }
 
-.mylistview .list-view .list-cell:hover {
-    -fx-background-color: derive(-fx-dark, -10%);
+.list-view .list-cell:hover {
+    -fx-background-color: derive(-fx-primary, -10%);
 }
 
-.mylistview .list-view .list-cell:selected {
-    -fx-background-color: -fx-dark;
+.list-view .list-cell:selected {
+    -fx-background-color: -fx-primary;
 }
 
-.mylistview .list-view .list-cell {
-    -fx-background-color: derive(-fx-dark, -40%);
-    -fx-text-fill: -fx-green;
+.list-view .list-cell {
+    -fx-background-color: derive(-fx-primary, -40%);
+    -fx-text-fill: white;
 }
 
-.mylistview .list-view .label {
-    -fx-text-fill: -fx-green;
+.list-view .label {
+    -fx-text-fill: -fx-secondary;
 }
 
-.mylistview .list-view .jfx-rippler {
+.list-view .jfx-rippler {
     -jfx-rippler-fill: -fx-secondary;
 }
 
 .mylistview{
-    -fx-border-color:-fx-dark;
+    -fx-border-color:-fx-primary;
 }
 
 /* The main scrollbar CSS class of ListView */
 .scroll-bar:horizontal ,
 .scroll-bar:vertical{
-    -fx-background-color:-fx-dark;
+    -fx-background-color:-fx-primary;
 
 }
 
 /* The increment and decrement button CSS class of scrollbar */
-.increment-button ,.mylistview .decrement-button {
+.increment-button ,.decrement-button {
     -fx-background-color:transparent;
 }
 
 /* The main scrollbar **track** CSS class  */
 .scroll-bar:horizontal .track ,
 .scroll-bar:vertical .track{
-    -fx-background-color: -fx-dark;
-    -fx-border-color:-fx-dark;
+    -fx-background-color: -fx-primary;
+    -fx-border-color:-fx-primary;
     -fx-background-radius: 0em;
 }
 
@@ -186,7 +183,7 @@ and open the template in the editor.
 .scroll-bar:horizontal:pressed .track ,
 .scroll-bar:vertical:hover .track,
 .scroll-bar:vertical:pressed .track{
-    -fx-background-color: -fx-dark;
+    -fx-background-color: -fx-primary;
 
     -fx-opacity: 0.2;
     -fx-background-radius: 0em;
@@ -199,7 +196,7 @@ and open the template in the editor.
     -fx-background-color: derive(-fx-secondary, 20%);
 }
 
-.increment-button:hover ,.mylistview .decrement-button:hover {
+.increment-button:hover ,.decrement-button:hover {
     /*-fx-background-color: derive(-fx-secondary, 20%);*/
     /*-fx-border-color: derive(-fx-secondary, 20%);*/
 }
