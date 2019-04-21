@@ -29,7 +29,7 @@ public class presentation extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFXML.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("utils/credentials/LoginPopupFXML.fxml"));
         Parent root = loader.load();
         root.setOnMousePressed(event -> {
             xOffset = event.getSceneX();

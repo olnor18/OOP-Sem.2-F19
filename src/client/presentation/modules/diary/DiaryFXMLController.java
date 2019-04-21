@@ -39,7 +39,6 @@ public class DiaryFXMLController implements Initializable {
         PatientView.getSelectionModel().selectionModeProperty().addListener((observable) -> {
             getPatient((Patient) PatientView.getSelectionModel().getSelectedItem());
         });
-
     }
 
     @FXML
