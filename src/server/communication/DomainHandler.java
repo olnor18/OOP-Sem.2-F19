@@ -5,10 +5,29 @@
  */
 package server.communication;
 
+import java.util.List;
+import server.domain.DomainInterface;
+
 /**
  *
  * @author Oliver
  */
 public class DomainHandler {
+    private static DomainHandler domainHandler;
+    private DomainInterface domainInterface;
     
+    private DomainHandler(){
+        domainInterface = new server.domain.DomainInterfaceImpl();
+    }
+    
+    public static DomainHandler getDomainHandler(){
+        if(domainHandler == null){
+            domainHandler = new DomainHandler();
+        }
+        return domainHandler;
+    }
+    
+    public synchronized List<String[]> parseQuery(String[] query){
+        return domainHandler.parseQuery(query);
+    }
 }

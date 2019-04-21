@@ -5,10 +5,12 @@
  */
 package client.communication;
 
+import java.util.*;
+
 /**
  *
  * @author Oliver
  */
 public interface CommunicationInterface {
-    
+    public List<String[]> sendQuery(String[] query);
 }
