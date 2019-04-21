@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 
 /**
@@ -36,6 +37,7 @@ public class DashboardFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         name.setText(CommunicationHandler.getInstance().getName());
+        name.setFill(Paint.valueOf("#2e4057"));
         ActivityEntry[] activityEntries = new ActivityEntry[]{
             new ActivityEntry(("Login"), new Date(), "Common login"),
             new ActivityEntry(("Delete"), new Date(), "Everything"),

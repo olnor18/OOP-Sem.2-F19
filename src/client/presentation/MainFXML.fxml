@@ -25,7 +25,7 @@
       </VBox>
       <VBox fx:id="menu" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" style="-fx-background-color: #048BA8;" translateX="-140.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <GridPane prefHeight="800.0" VBox.vgrow="NEVER">
+            <GridPane fx:id="menuGrid" prefHeight="800.0" VBox.vgrow="NEVER">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
@@ -43,8 +43,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <FontAwesomeIconView fill="#2e4057" glyphName="HOME" size="50" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label alignment="CENTER_RIGHT" text="Home" textAlignment="RIGHT" textFill="#2e4057">
+                  <FontAwesomeIconView fill="#2e4057" glyphName="HOME" size="50" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER_RIGHT" text="Home" textAlignment="RIGHT" textFill="#2e4057" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <FontAwesomeIconView fill="#2e4057" glyphName="CALENDAR" size="50" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER_RIGHT" text="Calendar" textAlignment="RIGHT" textFill="#2e4057" GridPane.columnIndex="0" GridPane.rowIndex="1">
                      <font>
                         <Font size="29.0" />
                      </font>
