@@ -3,7 +3,6 @@
  */
 package client.presentation.modules.diary;
 
-import client.presentation.CommunicationHandler;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,7 +39,7 @@ public class DiaryFXMLController implements Initializable {
         PatientView.getSelectionModel().selectionModeProperty().addListener((observable) -> {
             getPatient((Patient) PatientView.getSelectionModel().getSelectedItem());
         });
-        CommunicationHandler.getInstance().sendQuery();
+        //CommunicationHandler.getInstance().sendQuery();
     }
 
     @FXML
