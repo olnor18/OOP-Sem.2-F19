@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -36,6 +34,8 @@ public class ClientHandlerThread implements Runnable{
         } catch (IOException ex) {
             //Logger.getLogger(ClientHandlerThread.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("IO error " + ex);
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
         }
         
     }

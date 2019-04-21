@@ -6,14 +6,10 @@
 package client.communication;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,7 +23,7 @@ public class CommunicationInterfaceImpl implements CommunicationInterface {
         LOGIN(3, "login"),
         GETCALENDER(4, "getCalender"),
         MEDICIN(2, "getMedicin"),
-        USERLIST(3, "getUserlist");
+        USERLIST(3, "getUsers");
 
         int count = 0;
         String command;
@@ -52,8 +48,6 @@ public class CommunicationInterfaceImpl implements CommunicationInterface {
         if (checkQuery(query)) {
             try {
                 Socket clientSocket= new Socket("localhost", 1025);
-                
-                //InputStream input = clientSocket.getInputStream();
                 ObjectInputStream input = new ObjectInputStream(clientSocket.getInputStream());
                 ObjectOutputStream output = new ObjectOutputStream(clientSocket.getOutputStream());                
                 if (input.readBoolean()){
@@ -62,10 +56,8 @@ public class CommunicationInterfaceImpl implements CommunicationInterface {
                 }
                     
             } catch (IOException ex) {
-//                Logger.getLogger(CommunicationInterfaceImpl.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("I/ O error " + ex);
             } catch (ClassNotFoundException ex) {
-                //Logger.getLogger(CommunicationInterfaceImpl.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Input error " + ex);
             }
         }
