@@ -5,7 +5,6 @@ package client.presentation.utils.credentials;
 
 import client.presentation.CommunicationHandler;
 import static client.presentation.LoginFXMLController.pWord;
-import static client.presentation.LoginFXMLController.uName;
 import com.google.common.hash.Hashing;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -77,12 +76,12 @@ public class LoginPopupFXMLController implements Initializable {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                List<String[]> sqlReturn = CommunicationHandler.getInstance().sendQuery(new String[]{"login", username.getText(), Hashing.sha256().hashString(password.getText(), Charset.forName("UTF8")).toString()});
+                List<String[]> sqlReturn = CommunicationHandler.getInstance().sendQuery(new String[]{"login", username.getText(), hash(password.getText())});
                 if (sqlReturn != null && !sqlReturn.isEmpty()) {
-                    uName = username.getText();
+                    CredentialContainer.getInstance().setUsername(username.getText());
+                    CredentialContainer.getInstance().setPassword(hash(password.getText()));
                     pWord = password.getText();
                     Platform.runLater(() -> {
-                        loadMain();
                         closeStage();
                     });
 
@@ -119,6 +118,10 @@ public class LoginPopupFXMLController implements Initializable {
     @FXML
     private void handleCancelButtonAction() {
         System.exit(0);
+    }
+
+    private String hash(String input) {
+        return Hashing.sha256().hashString(input, Charset.forName("UTF8")).toString();
     }
 
     private void closeStage() {
