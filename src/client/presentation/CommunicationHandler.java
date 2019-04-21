@@ -38,7 +38,7 @@ public class CommunicationHandler {
     {
         //return communicationInterface.sendQuery(query);
         try {
-            Thread.sleep(4000);
+            Thread.sleep(1000);
         } catch (InterruptedException ex) {
             Logger.getLogger(CommunicationHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
