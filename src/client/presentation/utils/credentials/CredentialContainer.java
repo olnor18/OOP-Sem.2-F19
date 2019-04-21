@@ -10,12 +10,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
  * @author Hounsvad
  */
 public final class CredentialContainer {
+
+    /**
+     * xOffset for dragging the credentials window
+     */
+    public double xOffset = 0;
+
+    /**
+     * yOffset for dragging the credentials window
+     */
+    public double yOffset = 0;
 
     /**
      * The storage for the instance
@@ -78,12 +89,22 @@ public final class CredentialContainer {
      */
     public void openLoginWindow() {
         if (!isGettingCredentials) {
+
             isGettingCredentials = true;
             FXMLLoader loader = new FXMLLoader();
             Stage login = new Stage();
             try {
                 Parent root = loader.load(getClass().getResource(LOGIN_SCREEN_PATH));
                 Scene s = new Scene(root);
+                root.setOnMousePressed(event -> {
+                    xOffset = event.getSceneX();
+                    yOffset = event.getSceneY();
+                });
+                root.setOnMouseDragged(event -> {
+                    login.setX(event.getScreenX() - xOffset);
+                    login.setY(event.getScreenY() - yOffset);
+                });
+                login.initStyle(StageStyle.UNDECORATED);
                 login.setScene(s);
                 login.show();
             } catch (IOException ex) {

@@ -22,7 +22,7 @@ public class presentation extends Application {
     public double yOffset = 0;
 
     /**
-     * Initialize the first
+     * Initialize the first login screen without a decorator.
      *
      * @param stage
      * @throws Exception
