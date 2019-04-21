@@ -43,6 +43,11 @@ public final class CredentialContainer {
     private boolean isGettingCredentials = false;
 
     /**
+     *
+     */
+    private boolean firstRound = false;
+
+    /**
      * Observable value indicating the whether or not the credentials are ready
      */
     private BooleanProperty credentialReady = new SimpleBooleanProperty(false);
@@ -115,6 +120,7 @@ public final class CredentialContainer {
         if (this.username != null) {
             credentialReady.set(true);
         }
+        firstRound = false;
         this.isGettingCredentials = false;
         this.lastAccess = System.currentTimeMillis();
     }
@@ -160,5 +166,9 @@ public final class CredentialContainer {
             return this.username;
         }
         return null;
+    }
+
+    public boolean isFirst() {
+        return firstRound;
     }
 }

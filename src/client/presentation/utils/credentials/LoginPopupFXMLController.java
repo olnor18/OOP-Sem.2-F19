@@ -4,17 +4,22 @@
 package client.presentation.utils.credentials;
 
 import client.presentation.CommunicationHandler;
-import static client.presentation.LoginFXMLController.pWord;
+import client.presentation.utils.CustomDecorator;
 import com.google.common.hash.Hashing;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.svg.SVGGlyph;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
@@ -29,6 +34,11 @@ import javafx.stage.Stage;
  */
 public class LoginPopupFXMLController implements Initializable {
 
+    private double xOffset = 0;
+    private double yOffset = 0;
+
+    private final CommunicationHandler communicationHandler = CommunicationHandler.getInstance();
+
     @FXML
     private JFXTextField username;
     @FXML
@@ -39,6 +49,8 @@ public class LoginPopupFXMLController implements Initializable {
     private Pane loadpane;
     @FXML
     private ImageView loadblur;
+
+    private CredentialContainer containerInstance;
 
     /**
      * Initializes the controller class.
@@ -64,10 +76,13 @@ public class LoginPopupFXMLController implements Initializable {
                 message.setText("");
             }
         });
+        containerInstance = CredentialContainer.getInstance();
     }
 
     @FXML
     private void skip(ContextMenuEvent event) {
+        loadMain();
+        closeStage();
     }
 
     @FXML
@@ -80,8 +95,10 @@ public class LoginPopupFXMLController implements Initializable {
                 if (sqlReturn != null && !sqlReturn.isEmpty()) {
                     CredentialContainer.getInstance().setUsername(username.getText());
                     CredentialContainer.getInstance().setPassword(hash(password.getText()));
-                    pWord = password.getText();
                     Platform.runLater(() -> {
+                        if (containerInstance.isFirst()) {
+                            loadMain();
+                        }
                         closeStage();
                     });
 
@@ -126,6 +143,27 @@ public class LoginPopupFXMLController implements Initializable {
 
     private void closeStage() {
         ((Stage) username.getScene().getWindow()).close();
+    }
+
+    private void loadMain() {
+        try {
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/client/presentation/MainFXML.fxml"));
+            CustomDecorator decorator = new CustomDecorator(stage, root, false, true, true);
+            decorator.setCustomMaximize(true);
+            decorator.setGraphic(new SVGGlyph());
+            Scene scene = new Scene(decorator);
+            scene.getStylesheets().add(getClass().getResource("/client/presentation/css/generalStyleSheet.css").toExternalForm());
+            stage.setScene(scene);
+            stage.setMinHeight(870);
+            stage.setMinWidth(1200);
+            stage.show();
+            stage.setTitle("Sanitas Overview");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
 }
