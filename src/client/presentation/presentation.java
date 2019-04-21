@@ -20,7 +20,13 @@ public class presentation extends Application {
 
     public double xOffset = 0;
     public double yOffset = 0;
-    
+
+    /**
+     * Initialize the first
+     *
+     * @param stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFXML.fxml"));
