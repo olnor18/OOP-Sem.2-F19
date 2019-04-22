@@ -1,7 +1,7 @@
 /*This is code written by Frederik Alexander Hounsvad
  * The use of this code in a non commercial and non exam environment is permitted
  */
-package client.presentation.modules.diary;
+package client.presentation.modules.journal;
 
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
@@ -16,7 +16,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Hounsvad
  */
-public class DiaryFXMLController implements Initializable {
+public class JournalFXMLController implements Initializable {
 
     @FXML
     private JFXListView<LogEntry> automaticEntriesView;
