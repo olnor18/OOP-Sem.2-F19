@@ -16,7 +16,7 @@ import javafx.stage.StageStyle;
  *
  * @author Hounsvad
  */
-public class presentation extends Application {
+public class Presentation extends Application {
 
     public double xOffset = 0;
     public double yOffset = 0;

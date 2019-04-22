@@ -5,7 +5,7 @@
  */
 package launcher;
 
-import client.presentation.presentation;
+import client.presentation.Presentation;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import server.communication.ServerController;
@@ -17,7 +17,7 @@ import server.communication.ServerController;
 public class Launcher extends Application {
 
     public static void main(String[] args) {
-        new Thread(() -> presentation.main(args)).start();
+        new Thread(() -> Presentation.main(args)).start();
         new Thread(new ServerController()).start();
     }
 
