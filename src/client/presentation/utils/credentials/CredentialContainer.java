@@ -101,12 +101,12 @@ public final class CredentialContainer {
      */
     public boolean checkTimeValid() {
         if (this.lastAccess > 0 && this.lastAccess > System.currentTimeMillis() - 3600000) {
-            this.password = null;
-            this.lastAccess = 0l;//This is a long
-            credentialReady.set(false);
-            return true;
+            return false;
         }
-        return false;
+        this.password = null;
+        this.lastAccess = 0l;//This is a long
+        credentialReady.set(false);
+        return true;
     }
 
     /**
@@ -167,8 +167,16 @@ public final class CredentialContainer {
         return null;
     }
 
+    /**
+     * Checks if this is the first request for the login credentials
+     *
+     * @return a boolean value representing the first value
+     */
     public boolean isFirst() {
-        firstRound = !firstRound;
-        return !firstRound;
+        if (firstRound) {
+            firstRound = false;
+            return true;
+        }
+        return false;
     }
 }
