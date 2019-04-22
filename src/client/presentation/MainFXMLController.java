@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -75,7 +74,6 @@ public class MainFXMLController implements Initializable {
             Parent root = loader.load();
             module.setRoot(root);
             //module.setRoot(FXMLLoader.load(getClass().getResource(path)));
-            System.out.println(root);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
