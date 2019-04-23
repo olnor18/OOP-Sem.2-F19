@@ -37,7 +37,6 @@ public class StringUtils {
         }
         return sb.toString();
     }
-
     public static String hash(String input) {
         return Hashing.sha256().hashString(input, Charset.forName("UTF-8")).toString();
     }

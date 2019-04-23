@@ -69,7 +69,7 @@ public class DashboardFXMLController implements Initializable {
             new MessageEntry(("Login"), "john", "Common login", new Date()),
             new MessageEntry(("Login"), "john", "Common login", new Date()),
             new MessageEntry(("Login"), "john", "Common login", new Date()),
-            new MessageEntry(("Login"), "john", "Common login", new Date()),};
+            new MessageEntry(("Login"), "john", "Common login", new Date())};
 
         activityView.getItems().addAll(activityEntries);
         activityView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -83,7 +83,6 @@ public class DashboardFXMLController implements Initializable {
                 }
             }
         });
-
         messageView.getItems().addAll(messageEntries);
         messageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
@@ -96,7 +95,6 @@ public class DashboardFXMLController implements Initializable {
             }
         }
         );
-
     }
 
 }

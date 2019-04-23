@@ -64,16 +64,15 @@ public class MainFXMLController implements Initializable {
 
         menuTranslation.setFromX(-140);
         menuTranslation.setToX(0);
-
         menu.setOnMouseEntered(evt -> {
             menuTranslation.setRate(1);
             menuTranslation.play();
         });
-
         menu.setOnMouseExited(evt -> {
             menuTranslation.setRate(-1);
             menuTranslation.play();
         });
+
 
         buttonDashboard.setOnAction((e) -> loadSubScene("modules/dashboard/DashboardFXML.fxml"));
         buttonCalendar.setOnAction((e) -> loadSubScene("modules/calendar/CalendarFXML.fxml"));
@@ -91,5 +90,4 @@ public class MainFXMLController implements Initializable {
             ex.printStackTrace();
         }
     }
-
 }
