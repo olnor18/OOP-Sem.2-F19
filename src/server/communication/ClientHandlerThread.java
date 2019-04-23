@@ -8,7 +8,6 @@ package server.communication;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class ClientHandlerThread implements Runnable {
             ObjectOutputStream output = new ObjectOutputStream(clientSocket.getOutputStream());
             String[] query = (String[]) input.readObject();
             List<String[]> sendVariable = DomainHandler.getDomainHandler().parseQuery(query);
-            output.writeObject(new ArrayList<String[]>(sendVariable));
+            output.writeObject(sendVariable == null ? null : new ArrayList<String[]>(sendVariable));
 
         } catch (IOException ex) {
             ex.printStackTrace();
