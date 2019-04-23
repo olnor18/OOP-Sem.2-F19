@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server.persistance;
+package server.domain;
 
 import java.util.List;
 
 /**
  *
- * @author Oliver
+ * @author prikn
  */
-public interface PersistanceInterface {
+public interface DomainInterface {
     
     public List<String[]> parseQuery(String[] query);
     
